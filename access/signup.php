@@ -4,12 +4,6 @@ require_once 'class.user.php';
 
 $reg_user = new USER();
 
-if($reg_user->is_logged_in()!="")
-{
-	$reg_user->redirect('home.php');
-}
-
-
 if(isset($_POST['btn-signup']))
 {
 	$uname = trim($_POST['txtuname']);
@@ -26,7 +20,7 @@ if(isset($_POST['btn-signup']))
 		$msg = "
 		      <div class='alert alert-error'>
 				<button class='close' data-dismiss='alert'>&times;</button>
-					<strong>Sorry !</strong>  email allready exists , Please Try another one
+					<strong>Desculpe!</strong> mas esse email já está cadastrado.
 			  </div>
 			  ";
 	}
@@ -39,23 +33,24 @@ if(isset($_POST['btn-signup']))
 			$id = $key;
 			
 			$message = "					
-						Hello $uname,
+						Olá $uname,
 						<br /><br />
-						Welcome to Coding Cage!<br/>
-						To complete your registration  please , just click following link<br/>
+						Bem vindo ao anunciaC!<br/>
+						Para completar o seu cadastro, clique no botão abaixo<br/>
 						<br /><br />
-						<a href='http://localhost/x/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
+						<a href='http://localhost/anunciac/access/verify.php?id=$id&code=$code'>Clique aqui para ativar</a>
 						<br /><br />
-						Thanks,";
+						Obrigado,<br />
+						Equipe anunciaC.";
 						
-			$subject = "Confirm Registration";
+			$subject = "Confirmar cadastro";
 						
 			$reg_user->send_mail($email,$message,$subject);	
 			$msg = "
 					<div class='alert alert-success'>
 						<button class='close' data-dismiss='alert'>&times;</button>
-						<strong>Success!</strong>  We've sent an email to $email.
-                    Please click on the confirmation link in the email to create your account. 
+						<strong>Pronto!</strong>  Nós mandamos um email para $email.
+                    Por favor, clique no link para confirmar o seu cadastro. 
 			  		</div>
 					";
 		}
@@ -84,13 +79,13 @@ if(isset($_POST['btn-signup']))
     <div class="container">
 				<?php if(isset($msg)) echo $msg;  ?>
       <form class="form-signin" method="post">
-        <h2 class="form-signin-heading">Sign Up</h2><hr />
-        <input type="text" class="input-block-level" placeholder="Username" name="txtuname" required />
-        <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
-        <input type="password" class="input-block-level" placeholder="Password" name="txtpass" required />
+        <h2 class="form-signin-heading">Cadastre-se</h2><hr />
+        <input type="text" class="input-block-level" placeholder="Usuário" name="txtuname" required />
+        <input type="email" class="input-block-level" placeholder="Endereço de email" name="txtemail" required />
+        <input type="password" class="input-block-level" placeholder="Senha" name="txtpass" required />
      	<hr />
-        <button class="btn btn-large btn-primary" type="submit" name="btn-signup">Sign Up</button>
-        <a href="index.php" style="float:right;" class="btn btn-large">Sign In</a>
+        <button class="btn btn-large btn-primary" type="submit" name="btn-signup">Cadastrar</button>
+        <a href="index.php" style="float:right;" class="btn btn-large">Entrar</a>
       </form>
 
     </div> <!-- /container -->

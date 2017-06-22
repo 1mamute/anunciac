@@ -39,7 +39,7 @@ if(isset($_POST['btn-login']))
 		<?php 
 		if(isset($_GET['inactive']))
 		{
-			?>
+			exit(); session_destroy(); $_SESSION['userSession'] = false;?>
             <div class='alert alert-error'>
 				<button class='close' data-dismiss='alert'>&times;</button>
 				<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it. 

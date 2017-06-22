@@ -1,3 +1,19 @@
+<?php
+$user_login = new USER();
+
+if(isset($_POST['btn-login']))
+{
+ $email = trim($_POST['txtemail']);
+ $upass = trim($_POST['txtupass']);
+ 
+ if($user_login->login($email,$upass))
+ {		
+	 header('Location: '.$_SERVER['PHP_SELF']);
+	 exit();
+ }
+}
+?>
+
 <div class="container">
 	<div class="row">
 
@@ -12,7 +28,7 @@
             <form method="post" action='' name="login_form">
 			<p><input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required /></p>
 			<p><input type="password" class="input-block-level" placeholder="Password" name="txtupass" required /></p>
-              <p>        <button class="btn btn-large btn-primary" type="submit" name="btn-login">Entrar</button>
+              <p><button class="btn btn-large btn-primary" type="submit" name="btn-login">Entrar</button>
                 <a href="access/fpass.php">Esqueceu sua senha?</a>
               </p>
             </form>
@@ -27,13 +43,13 @@
 	</div>
 </div>
 
-<?php 
+		<?php 
 		if(isset($_GET['inactive']))
 		{
 			?>
             <div class='alert alert-error'>
 				<button class='close' data-dismiss='alert'>&times;</button>
-				<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it. 
+				<strong>Desculpe!</strong> Essa conta não está ativada, cheque seu email para ativá-la. 
 			</div>
             <?php
 		}

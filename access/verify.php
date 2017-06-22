@@ -30,7 +30,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 			$msg = "
 		           <div class='alert alert-success'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
-					  <strong>WoW !</strong>  Your Account is Now Activated : <a href='index.php'>Login here</a>
+					  <strong>Pronto!</strong>  Sua conta foi ativada. <a href='../index.php'>Voltar a página principal</a>
 			       </div>
 			       ";	
 		}
@@ -39,7 +39,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 			$msg = "
 		           <div class='alert alert-error'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
-					  <strong>sorry !</strong>  Your Account is allready Activated : <a href='index.php'>Login here</a>
+					  <strong>Desculpe-nos!</strong>  Sua conta já foi ativada. <a href='../index.php'>Voltar a página principal</a
 			       </div>
 			       ";
 		}
@@ -49,7 +49,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 		$msg = "
 		       <div class='alert alert-error'>
 			   <button class='close' data-dismiss='alert'>&times;</button>
-			   <strong>sorry !</strong>  No Account Found : <a href='signup.php'>Signup here</a>
+			   <strong>Desculpe-nos!</strong> Não achamos sua conta. <a href='../index.php'>Voltar a página principal</a
 			   </div>
 			   ";
 	}	

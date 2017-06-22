@@ -1,3 +1,4 @@
+CREATE DATABASE anunciacdb;
 CREATE TABLE IF NOT EXISTS `tbl_users` (
 `userID` int(11) NOT NULL AUTO_INCREMENT,
 `userName` varchar(100) NOT NULL,

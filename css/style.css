@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-header .header-inner {
   height: 80px;
-  padding-left: 20px;
+  padding-left: 10px;
   padding-right: 20px;
   float: left;
   width: 100%;
@@ -402,8 +402,8 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 #fh5co-header nav ul {
-  padding: 0;
-  margin: 0 -0px 0 0;
+  padding: -15px;
+  margin: 10 -0px 0 0;
   line-height: 0;
 }
 #fh5co-header nav ul li {

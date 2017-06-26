@@ -1,5 +1,5 @@
-	<?php include('header.php');?>
-	<aside id="fh5co-hero" clsas="js-fullheight">
+			<?php include('header.php');?>
+		<aside id="fh5co-hero" clsas="js-fullheight">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
 		   	<li style="background-image: url(images/slide_1.jpg);">

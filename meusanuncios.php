@@ -1,6 +1,5 @@
-	<?php include('header.php');?>
-
-	<div class="fh5co-page-title" style="background-image: url(images/slide_6.jpg);">
+			<?php include('header.php');?>
+		<div class="fh5co-page-title" style="background-image: url(images/slide_6.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">

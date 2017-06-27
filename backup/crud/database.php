@@ -20,13 +20,21 @@ function close_database($conn) {
 /**
  *  Pesquisa um Registro pelo ID em uma Tabela
  */
-function find( $table = null, $id = null ) {
+function find($table = null, $id = null) {
   
 	$database = open_database();
 	$found = null;
 	try {
 	  if ($id) {
 	    $sql = "SELECT * FROM " . $table . " WHERE id = " . $id;
+	    $result = $database->query($sql);
+	    
+	    if ($result->num_rows > 0) {
+	      $found = $result->fetch_assoc();
+	    }
+	    
+	  } else if ($tipo) {
+	    $sql = "SELECT * FROM " . $table . " WHERE tipo = " . $tipo;
 	    $result = $database->query($sql);
 	    
 	    if ($result->num_rows > 0) {
@@ -60,7 +68,11 @@ function find( $table = null, $id = null ) {
 /**
  *  Pesquisa Todos os Registros de uma Tabela
  */
-function find_all( $table ) {
-  return find($table);
+function find_all($table) {
+	return find($table);
+}
+
+function find_aluguel($table, $tipo){
+	return find($table, $tipo);
 }
 ?>

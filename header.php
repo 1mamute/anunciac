@@ -21,9 +21,9 @@ if($user_home->is_logged_in())
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>anunciaC</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
 
 
 	<meta property="og:title" content=""/>
@@ -70,19 +70,17 @@ if($user_home->is_logged_in())
 						<ul>
 							<?php if($user_login->is_logged_in())
 							{
-							echo "<font color='white'>Olá, {$row['userEmail']}.</font>
-							<li><a href='anunciosCRUD.php'>Anúncios</a></li>
+							echo "<li><font color='white'>Olá, {$row['userEmail']}.</font></li>
+							<li><a href='anuncios.php'>Anúncios</a></li>
 							<li><a href='criaranuncio.php'>Criar anúncio</a></li>
 							<li><a href='meusanuncios.php'>Meus anúncios</a></li>		
 							<li><a href='sobre.php'>Sobre nós</a></li>
-							<li><a href='sobre.php'>Contato</a></li>
                             <li class='cta'><a href='access/logout.php?logout'>Sair</a></li>";
 							}
 							else
 							{
-							echo "<li><a href='anunciosCRUD.php'>Anúncios</a></li>						
+							echo "<li><a href='anuncios.php'>Anúncios</a></li>						
 							<li><a href='sobre.php'>Sobre nós</a></li>
-							<li><a href='sobre.php#contato'>Contate-nos</a></li>
                             <li class='cta'><a data-toggle='modal' href='#login-form'>Entrar</a></li>";
 							};?>
 						</ul>

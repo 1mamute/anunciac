@@ -14,21 +14,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 animate-box">
-					<h1><span class="colored">Comprar</span> Propriedades</h1>
+					<h1><span class="colored">Todos</span> os anúncios</h1>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="best-deal">
-		<div class="container">
-			<div class="row">
-		<div class="col-sm-6">
-			<h2>Clientes</h2>
-		</div>
-		<div class="col-sm-6 text-right h2">
-	    	<a class="btn btn-primary" href="add.php"><i class="fa fa-plus"></i> Novo Cliente</a>
-	    	<a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>
-	    </div>
 	</div>
 
 <?php if (!empty($_SESSION['message'])) : ?>
@@ -39,44 +28,49 @@
 	<?php clear_messages(); ?>
 <?php endif; ?>
 
-<hr>
+		</br>
+		<div class="container">
+		
+			<div class="row">
+				
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" data-animate-effect="fadeIn">
+					<h2>Você deseja:</h2>
+					<p><button type="button" class="btn btn-primary btn-lg">Comprar</button>
+					<button type="button" class="btn btn-primary btn-lg">Alugar</button></p>
+				</div>
 
-<table class="table table-hover">
-<thead>
-	<tr>
-		<th>Nome</th>
-		<th width="30%">Valor</th>
-		<th>Descrição</th>
-		<th>Endereço</th>
-		<th>Telefone</th>
-		<th>Inserido por</th>
-	</tr>
-</thead>
-<tbody>
-<?php if ($anuncios) : ?>
-<?php foreach ($anuncios as $anuncio) : ?>
-	<tr>
-		<td><?php echo $anuncio['nome']; ?></td>
-		<td><?php echo $anuncio['valor']; ?></td>
-		<td><?php echo $anuncio['descricao']; ?></td>
-		<td><?php echo $anuncio['endereco']; ?></td>
-		<td><?php echo $anuncio['telefone']; ?></td>
-		<td class="actions text-right">
-			<a href="view.php?id=<?php echo $anuncio['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
-			<a href="edit.php?id=<?php echo $anuncio['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
-			<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-anuncio="<?php echo $anuncio['id']; ?>">
-				<i class="fa fa-trash"></i> Excluir
-			</a>
-		</td>
-	</tr>
-<?php endforeach; ?>
-<?php else : ?>
-	<tr>
+
+		<?php if ($anuncios) : ?>
+		<?php foreach ($anuncios as $anuncio) : ?>
+								<div class="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+					<div class="fh5co-property">
+						<figure>
+							<img src="images/slide_3.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+							<a href="#" class="tag"><?php echo $anuncio['tipo']; ?></a>
+						</figure>
+						<div class="fh5co-property-innter">
+							<h3><a href="#"><?php echo $anuncio['nome']; ?></a></h3>
+							<div class="price-status">
+		                 	<span class="price"><?php echo $anuncio['valor']; ?></span>
+		               </div>
+		               <p><?php echo $anuncio['descricao']; ?></p>
+	            	</div>
+	            	<p class="fh5co-property-specification">
+	            		<span><strong><?php echo $anuncio['area']; ?></strong> m²</span>  <span><strong><?php echo $anuncio['quartos']; ?></strong> Quarto(s)</span>  <span><strong><?php echo $anuncio['garagem']; ?></strong> Vaga(s) na Garagem</span>
+	            	</p>
+					</div>
+									</div>
+		<?php endforeach; ?>
+		<?php else : ?>
+			<tr>
 		<td colspan="6">Nenhum registro encontrado.</td>
-	</tr>
-<?php endif; ?>
-</tbody>
-</table>
+			</tr>
+		<?php endif; ?>
+					
+
+
+			</div>
+		</div>
 
 			<div class="row">
 				<div class="col-md-12 text-center animate-box" data-animate-effect="fadeIn">
